@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "trips",
+  "info": {
+    "singularName": "trip",
+    "pluralName": "trips",
+    "displayName": "trip"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "trip_name": {
+      "type": "string"
+    },
+    "flight": {
+      "type": "string"
+    },
+    "start_date": {
+      "type": "date"
+    },
+    "end_date": {
+      "type": "date"
+    },
+    "guide_name": {
+      "type": "string"
+    },
+    "users_iduser": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "trips"
+    },
+    "trip_histories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::trip-history.trip-history",
+      "mappedBy": "trip"
+    }
+  }
+}

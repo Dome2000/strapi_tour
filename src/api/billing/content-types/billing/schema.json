@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "billings",
+  "info": {
+    "singularName": "billing",
+    "pluralName": "billings",
+    "displayName": "billing"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "quotation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::quotation.quotation",
+      "inversedBy": "billing"
+    },
+    "quotation_detail": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::quotation-detail.quotation-detail",
+      "inversedBy": "billing"
+    },
+    "payment_dudate": {
+      "type": "date"
+    },
+    "pay": {
+      "type": "float"
+    },
+    "payment_information": {
+      "type": "string"
+    },
+    "collector": {
+      "type": "string"
+    },
+    "auditor": {
+      "type": "string"
+    },
+    "approver": {
+      "type": "string"
+    }
+  }
+}

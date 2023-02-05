@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "quotation_details",
+  "info": {
+    "singularName": "quotation-detail",
+    "pluralName": "quotation-details",
+    "displayName": "quotation_detail"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "detail": {
+      "type": "string"
+    },
+    "quantity": {
+      "type": "integer"
+    },
+    "unit_type": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "integer"
+    },
+    "billing": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::billing.billing",
+      "mappedBy": "quotation_detail"
+    },
+    "invoid": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::invoid.invoid",
+      "mappedBy": "quotation_detail"
+    },
+    "quotations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::quotation.quotation",
+      "mappedBy": "quotation_detail"
+    }
+  }
+}

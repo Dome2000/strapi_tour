@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "invoids",
+  "info": {
+    "singularName": "invoid",
+    "pluralName": "invoids",
+    "displayName": "invoid"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "total": {
+      "type": "float"
+    },
+    "installment": {
+      "type": "integer"
+    },
+    "remaining": {
+      "type": "float"
+    },
+    "quotation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::quotation.quotation",
+      "inversedBy": "invoid"
+    },
+    "quotation_detail": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::quotation-detail.quotation-detail",
+      "inversedBy": "invoid"
+    }
+  }
+}
