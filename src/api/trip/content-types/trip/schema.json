@@ -4,7 +4,8 @@
   "info": {
     "singularName": "trip",
     "pluralName": "trips",
-    "displayName": "trip"
+    "displayName": "trip",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -32,11 +33,11 @@
       "target": "plugin::users-permissions.user",
       "inversedBy": "trips"
     },
-    "trip_histories": {
+    "customers": {
       "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::trip-history.trip-history",
-      "mappedBy": "trip"
+      "relation": "manyToMany",
+      "target": "api::customer.customer",
+      "inversedBy": "trips"
     }
   }
 }

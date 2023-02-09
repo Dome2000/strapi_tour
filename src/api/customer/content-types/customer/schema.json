@@ -53,11 +53,11 @@
       "target": "plugin::users-permissions.user",
       "inversedBy": "customers"
     },
-    "trip_histories": {
+    "trips": {
       "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::trip-history.trip-history",
-      "mappedBy": "customer"
+      "relation": "manyToMany",
+      "target": "api::trip.trip",
+      "mappedBy": "customers"
     }
   }
 }
