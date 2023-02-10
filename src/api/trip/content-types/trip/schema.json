@@ -38,6 +38,15 @@
       "relation": "manyToMany",
       "target": "api::customer.customer",
       "inversedBy": "trips"
+    },
+    "outbound_flight": {
+      "type": "string"
+    },
+    "inbound_flight": {
+      "type": "string"
+    },
+    "hotel": {
+      "type": "string"
     }
   }
 }
